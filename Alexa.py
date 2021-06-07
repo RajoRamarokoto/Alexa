@@ -23,10 +23,10 @@ def take_command():
         with sr.Microphone() as source:
             print('listening')
             voice = listener.listen(source)
-            command = listener.recognize_google(voice)
-            command = command.lower()
-            if 'alexa' in command:
-                command = command.replace('alexa', '')
+            cmd = listener.recognize_google(voice)
+            cmd = cmd.lower()
+            if 'alexa' in cmd:
+                command = cmd.replace('alexa', '')
                 print(command)
     except:
         pass
